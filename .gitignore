@@ -29,3 +29,6 @@ service_account.json
 target/
 dbt_packages/
 logs/
+
+secrets/
+secrets/*.json
