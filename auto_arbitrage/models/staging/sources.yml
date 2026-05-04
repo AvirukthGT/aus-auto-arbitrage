@@ -1,0 +1,7 @@
+sources:
+  - name: raw_auto
+    database: root-anvil-474411-k5
+    schema: aus_auto_market
+    tables:
+      - name: raw_vehicle_listings
+        description: "Raw daily ingest of Australian vehicle prices."
