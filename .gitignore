@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Ignore Data Files
+data/
+*.csv
+*.json
+*.parquet
+
+# Ignore Environment and Cache
+.venv/
+__pycache__/
+*.pyc
+
+# Ignore Credentials
+*.env
+credentials/
+service_account.json
+
+# Ignore dbt target/logs
+target/
+dbt_packages/
+logs/
