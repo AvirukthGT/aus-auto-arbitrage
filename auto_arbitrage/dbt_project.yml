@@ -31,6 +31,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   auto_arbitrage:
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
+    # Everything in the staging folder goes to the Silver dataset
+    staging:
+      +schema: aus_auto_silver
+    # Everything in the marts folder goes to the Gold dataset
+    marts:
+      +schema: aus_auto_gold
