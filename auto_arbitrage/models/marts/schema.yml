@@ -1,0 +1,50 @@
+version: 2
+
+models:
+  - name: dim_location
+    description: "One row per unique location in Australia."
+    columns:
+      - name: location_id
+        description: "Primary key for the location."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_vehicle
+    description: "The unique 'DNA' of the vehicle."
+    columns:
+      - name: vehicle_id
+        description: "Primary key for the vehicle specs."
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_listings
+    description: "The core transactional fact table of active car listings."
+    columns:
+      - name: listing_id
+        description: "Primary key for the listing."
+        tests:
+          - unique
+          - not_null
+          
+      - name: vehicle_id
+        description: "Foreign key pointing to dim_vehicle."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_vehicle')
+              field: vehicle_id
+              
+      - name: location_id
+        description: "Foreign key pointing to dim_location."
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: location_id
+              
+      - name: price
+        description: "The listed price of the car."
+        tests:
+          - not_null

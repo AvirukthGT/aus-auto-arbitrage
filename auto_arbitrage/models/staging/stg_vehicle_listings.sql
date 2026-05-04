@@ -51,3 +51,5 @@ cleaned AS (
 )
 
 SELECT * FROM cleaned
+-- Deduplicate identical listings created by dealership spam
+QUALIFY ROW_NUMBER() OVER (PARTITION BY listing_id ORDER BY price DESC) = 1

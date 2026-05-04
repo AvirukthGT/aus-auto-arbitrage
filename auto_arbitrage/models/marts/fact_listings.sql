@@ -7,8 +7,11 @@ SELECT
     listing_id,
 
     -- Foreign keys referencing dimension surrogate keys
+    -- Must perfectly match the dimension hash to join properly
     {{ dbt_utils.generate_surrogate_key([
-        'brand', 'model', 'vehicle_year', 'body_type', 'transmission', 'drive_type', 'fuel_type'
+        'brand', 'model', 'vehicle_year', 'body_type', 'car_suv', 
+        'transmission', 'drive_type', 'fuel_type', 'engine_cylinders', 
+        'fuel_consumption_l_100km', 'doors', 'seats'
     ]) }} AS vehicle_id,
     
     {{ dbt_utils.generate_surrogate_key(['location_raw']) }} AS location_id,
