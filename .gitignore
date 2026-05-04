@@ -32,3 +32,6 @@ logs/
 
 secrets/
 secrets/*.json
+
+
+auto_arbitrage/profiles.yml
