@@ -405,6 +405,8 @@ The BI layer translates millions of rows of complex engineering and algorithmic 
 
 ![Tableau Dashboard](assets/Arbitrage%20Intelligence.png)
 
+[View Live Dashboard](https://public.tableau.com/views/aus_arb/ArbitrageIntelligence?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 ### The Target Buy Zone
 The centerpiece of the dashboard is a Scatter Plot mapping the Market Asking Price on the X-axis against the Predicted Arbitrage Margin on the Y-axis. 
 
