@@ -25,4 +25,6 @@ RUN uv pip install --system \
     pandas \
     pyarrow \
     google-cloud-bigquery \
-    python-dotenv
+    python-dotenv \
+    papermill==2.6.0 \
+    ipykernel==6.29.0

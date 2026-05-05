@@ -34,5 +34,16 @@ with DAG(
         task_id='dbt_build_marts',
         bash_command='cd /opt/airflow/auto_arbitrage && dbt build --profiles-dir .',
     )
+
+    # Execute ML Notebook via Papermill
+    task_train_ml_model = BashOperator(
+        task_id='execute_ml_notebook',
+        bash_command=(
+            'papermill '
+            '"/opt/airflow/Vertex Workbench/Auto_Arbitrage_ML.ipynb" '
+            '"/opt/airflow/Vertex Workbench/Auto_Arbitrage_ML_{{ ds }}.ipynb"'
+        ),
+    )
+
     # Define task dependencies
-    task_ingest_raw >> task_dbt_build
+    task_ingest_raw >> task_dbt_build >> task_train_ml_model

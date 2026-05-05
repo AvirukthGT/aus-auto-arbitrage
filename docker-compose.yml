@@ -17,6 +17,7 @@ x-airflow-common: &airflow-common
     - ./scripts:/opt/airflow/scripts
     - ./auto_arbitrage:/opt/airflow/auto_arbitrage
     - ./secrets:/opt/airflow/secrets
+    - "./Vertex Workbench:/opt/airflow/Vertex Workbench"
   depends_on: &airflow-common-depends-on
     postgres:
       condition: service_healthy
